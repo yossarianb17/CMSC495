@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col s12 m6 l6">
+    <div class="card-panel purple darken-1 white-text center">
+      <i class="material-icons medium">attach_money</i>
+      <h5>Account Balance</h5>
+      <h3 class="count">${{ userDetails.balance }}</h3>
+    </div>
+  </div>
+  <div class="col s12 m6 l6">
+    <div class="card-panel purple darken-1 white-text center">
+      <i class="material-icons medium">account_balance_wallet</i>
+      <h5>Account Type</h5>
+      <h3>{{ userDetails.accountType }} Account</h3>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 l12 m6">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Profile</span>
+        <table class="hightlight responsive-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>From</th>
+              <th>To</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="one-row" *ngFor="let transaction of transactionDetails.slice().reverse()">
+              <td [ngClass]="{'red white-text' : transaction.transactionType == 'withdraw', 
+              'blue white-text' : transaction.transactionType == 'deposit',
+              'green white-text' : transaction.transactionType == 'transfer'}">{{ transaction.transactionType }}</td>
+              <td>${{ transaction.amount }}</td>
+              <td>{{ transaction.from }}</td>
+              <td>{{ transaction.to }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

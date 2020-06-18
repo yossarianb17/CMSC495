@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="card-panel">
+    <form #calculateForm="ngForm" class="useForm" (ngSubmit)="calculate(calculateForm)">
+      <h3>Choose Date</h3>
+      <div class="row">
+        <div class="inout-field">
+            <input type="date" name="date" #date="ngModel" [(ngModel)]="model.date" >
+        </div>
+      </div>
+      <div class="row">
+        <input type="submit" class="btn purple darken-3" value="Calculate">
+      </div>
+      <div class="card-panel purple darken-1 white-text" *ngIf="response">
+         <div>
+           <h5>Your Accrued Interest By the Given Date Will be : ${{ calculated }}</h5>
+         </div>
+      </div>
+    </form>
+  </div>
+  </div>

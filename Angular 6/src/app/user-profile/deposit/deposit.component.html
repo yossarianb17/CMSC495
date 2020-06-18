@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="green white-text card-panel" *ngIf="serverSuccessMessage">
+      successfully Added
+    </div>
+    <div class="red white-text card-panel" *ngIf="serverErrorMessages">
+      {{ serverErrorMessages }}
+    </div>
+  <div class="card-panel">
+    <form #depositForm="ngForm" class="useForm" (ngSubmit)="depositForm.valid && onSubmit(depositForm)">
+      <h3>Deposit</h3>
+      <div class="row">
+        <div class="">
+          <i class="material-icons prefix">attach_money</i>
+          <input id="icon_prefix" name="balance" type="Number" #balance="ngModel" 
+          [(ngModel)]="model.balance" placeholder="amount" required>
+        </div>
+        <div *ngIf="depositForm.submitted && !balance.valid" class="validation-message red-text">
+          <label class="red-text">Enter Ammount</label>
+        </div>
+        <div>
+          <button type="submit" class="btn waves-effect purple darken-3">Deposit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>  

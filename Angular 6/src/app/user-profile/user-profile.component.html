@@ -1,0 +1,107 @@
+<main>
+  <nav class="purple darken-2 navbar-fixed">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo" routerLink="/userprofile">Home</a>
+        <a href="#!" data-activates="slide-out" class="button-collapse right">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a href="#!" routerLink="/withdraw">WIthdraw</a>
+          </li>
+          <li>
+            <a href="#!" routerLink="/deposit">Deposit</a>
+          </li>
+          <li>
+            <a href="#!" routerLink="/transfer">Transfer</a>
+          </li>
+          <li>
+            <a href="#!" routerLink="/accruedinterest">Accrued Interest</a>
+          </li>
+        </ul>
+        <ul id="slide-out" class="side-nav fixed">
+            <li>
+              <div class="user-view">
+                <div class="background purple darken-2">
+                </div>
+                <a href="#!">
+                  <img class="circle" src="../../assets/img/users.png">
+                </a>
+                <a href="#!">
+                  <span class="white-text name">{{ userDetails.fullName }}</span>
+                </a>
+                <a href="#!">
+                  <span class="white-text email">{{ userDetails.email }}</span>
+                </a>
+              </div>
+            </li>
+            <li>
+              <a href="#!">
+                <i class="material-icons" routerLink="/userprofile">dashboard</i>Home</a>
+            </li>
+            <li>
+              <a class="subheader">Account Actions</a>
+            </li>
+              <li><a href="#!" routerLink="/withdraw">Withdraw</a></li>
+              <li><a href="#!" routerLink="/deposit">deposit</a></li>
+              <li><a href="#!" routerLink="/transfer">Transfer</a></li>
+              <li><a href="#!" routerLink="/accruedinterest">Check Accrured Interest</a></li>
+            <li>
+              <a class="waves-effect" href="#!" (click)="onLogout()">Logout</a>
+            </li>
+          </ul>
+      </div>  
+    </div>
+  </nav>
+  <div class="outlet">
+      <router-outlet></router-outlet>
+  </div>
+      <!-- <main>
+        <section class="signs">
+          <div class="row">
+            <div class="col s12 m6 l6">
+              <div class="card-panel purple darken-1 white-text center">
+                <i class="material-icons medium">account_balance</i>
+                <h5>Account Balance</h5>
+                <h3>{{ userDetails.balance }}</h3>
+              </div>
+            </div>
+            <div class="col s12 m6 l6">
+              <div class="card-panel purple darken-1 white-text center">
+                <i class="material-icons medium">account_balance_wallet</i>
+                <h5>Account Type</h5>
+                <h3>{{ userDetails.accountType }}</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+        <router-outlet></router-outlet>
+        <table *ngIf="userDetails" class="table-fill">
+          <thead>
+              <tr>
+                  <th colspan="2" class="text-center">User Profile</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>First Name</td>
+                  <td>{{userDetails.fullName.split(' ')[0]}}</td>
+              </tr>
+              <tr>
+                  <td>Last Name</td>
+                  <td>{{userDetails.fullName.split(' ')[1]}}</td>
+              </tr>
+              <tr>
+                  <td>Email</td>
+                  <td>{{userDetails.email}}</td>
+              </tr>
+              <tr>
+                  <td colspan="2" class="text-center">
+                      <input type="button" (click)="onLogout()" value="Logout" />
+                  </td>
+              </tr>
+          </tbody>
+        </table>
+      </main> -->
+</main>

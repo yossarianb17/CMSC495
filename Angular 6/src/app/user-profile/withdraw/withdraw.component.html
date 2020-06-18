@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="green white-text card-panel" *ngIf="serverSuccessMessage">
+    successfully Withdrawed
+  </div>
+  <div class="red white-text card-panel" *ngIf="serverErrorMessages">
+    {{ serverErrorMessages }}
+  </div>
+  <div class="card-panel">
+    <form #withdrawForm="ngForm" class="useForm" (ngSubmit)="withdrawForm.valid && onSubmit(withdrawForm)">
+      <h3>Withdraw</h3>
+      <div class="row">
+        <div class="">
+          <i class="material-icons prefix">attach_money</i>
+          <input id="icon_prefix" name="balance" type="Number" #balance="ngModel" 
+          [(ngModel)]="model.balance" placeholder="amount" required>
+        </div>
+        <div *ngIf="withdrawForm.submitted && !balance.valid" class="validation-message red-text">
+          <label class="red-text">Enter Ammount</label>
+        </div>
+        <div>
+          <button type="submit" class="btn waves-effect purple darken-3">Withdraw</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>  
